@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
         }
 	else if (strcmp(command, "help") == 0)
         {
-            printf("Hello World");
+            printf("cd *directory* :  change current directory to the next *directory*, if the next *directory* name doesn't exist, error \" No such directory or file' is printed.\nclr - Clear the screen terminal.\ndir <directory> -  List the content of the directory selected or dir iwht no selected directory  list the content of the current directory too (as the ls command)\nenviron - List all the environment strings.\necho <comment> - Display <comment> on the display followed by a new line (multiple spaces/tabs may be reduced to a single space).\nhelp - Display the user manual using the more\n filter.\npause - Pause operation of the shell until 'Enter' is pressed.\nquit - Quit the shell.");
         }
 	else if (strcmp(command, "pause") == 0)
         {
