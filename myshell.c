@@ -39,12 +39,21 @@ int main(int argc, char *argv[])
     // Perform an infinite loop getting command input from users
     while (fgets(buffer, BUFFER_LEN, stdin) != NULL)
     {
-	int num_tokens = argc;
         // Perform string tokenization to get the command and argument
-	strcpy(arg,argv[i])
-	printf("Tokenize Line: \"%s\"\n", str_ptr);
+	strcpy(arg,buffer);
+	fputs(arg,stdout);
+	int num_tokens = 0;
+	char *token = NULL;
 
-	return 0;
+	    printf("Tokenize Line: \"%s\"", buffer);
+	    for( token  = strtok(buffer, " ");
+		 NULL    != token;
+		 token  = strtok(NULL, " ") ) {
+		printf("\t%d) \"%s\"\n", num_tokens, token);
+		++num_tokens;
+	    }
+	    printf("Number of tokens: %d\n", num_tokens);
+
         // Check the command and execute the operations for each command
         // cd command -- change the current directory
         if (strcmp(command, "cd") == 0)

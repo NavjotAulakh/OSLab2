@@ -29,3 +29,6 @@ pause - Pause operation of the shell until 'Enter' is pressed.
 quit - Quit the shell.
 
 The shell environment should contain shell=<pathname>/myshell where <pathname>/myshell is the full path for the shell executable (not a hardwired path back to your directory, but the one from which it was executed).
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClX8585dAQpkeOgnXTPWa87ZHpE3ckefInF8r/4Che8i7aiwFMZ/IVya3+YN24dI9djWNDr45UG0oZONUADrIixonVriNTgGL3q5wfcdUj6ajHJKJKkWnWqckoX22N4g3B4vmEeS42fUWr/2icGAsk5Ade6rB5iKj4dJsUHTZc7DuNoMsXhGq2ncbY86jvhZwJdo3SKwg+71dT2KEWGQs3uHlsGediWl50WY2EFeJSfbtE6n2MZ0r4H27Gp2lv5s4996Ab5kMjhaeiJ1atsMAVqs8H1KPjBUSdvDHZymHEDwUhQcqgF6iuE3JW3lfTCGBKBYPjh4Cv8nd+zZqrbukb frost@ubuntu
