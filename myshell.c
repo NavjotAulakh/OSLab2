@@ -32,49 +32,41 @@ int main(int argc, char *argv[])
     int i;
 
     for( i = 0; i < argc; ++i ) {
-	printf("Argument %d = \"%s\"\n", i, argv[i]);
-	strcpy(command, argv[i]);
+		printf("Argument %d = \"%s\"\n", i, argv[i]);
+		strcpy(command, argv[i]);
     }
 
     // Perform an infinite loop getting command input from users
-    while (fgets(buffer, BUFFER_LEN, stdin) != NULL)
-    {
+    while (fgets(buffer, BUFFER_LEN, stdin) != NULL) {
         // Perform string tokenization to get the command and argument
-	strcpy(arg,buffer);
-	fputs(arg,stdout);
-	int num_tokens = 0;
-	char *token = NULL;
+		strcpy(arg,buffer);
+		fputs(arg,stdout);
+		int num_tokens = 0;
+		char *token = NULL;
 
-	printf("Tokenize Line: \"%s\"", buffer);
-	for( token = strtok(buffer, " ");NULL != token;token = strtok(NULL, " "))
-	{
+		printf("Tokenize Line: \"%s\"", buffer);
+
+	for( token = strtok(buffer, " ");NULL != token;token = strtok(NULL, " ")) {
 		printf("\t%d) \"%s\"\n", num_tokens, token);
-		if (num_tokens == 0) {strcpy(command,token);} 
+		if (num_tokens == 0) {
+			strcpy(command,token);
+		} 
 		else {
 			strcpy(arguments[num_tokens],token);
 		}
 		++num_tokens;
 	}
-<<<<<<< HEAD
 	
-	printf("Command token: %s\n", command);
-	printf("Argument1 tokens: %s\n", arguments[1]);
-	printf("Argument2 tokens: %s\n", arguments[2]);
-	
-        // Check the command and execute the operations for each command
-        // cd command -- change the current directory
-        if (strcmp(command, "cd") == 0)
-        {
-            printf("Hello World CD\n");
-=======
-	printf("Command token (command): %s\n", command);
-	printf("Command token (argument): %s\n", arg);
-	
+		printf("Command token: %s\n", command);
+		printf("Argument1 tokens: %s\n", arguments[1]);
+		printf("Argument2 tokens: %s\n", arguments[2]);
+
         // Check the command and execute the operations for each command
         // cd command -- change the current directory
         if (strcmp(command, "cd") == 0) {
-            printf("Hello World");
->>>>>>> d22112d9e8a6ea306f84db1385b68cab335ccac8
+            printf("Hello World CD\n");
+			printf("Command token (command): %s\n", command);
+			printf("Command token (argument): %s\n", arg);
         }
 		else if (strcmp(command, "clr") == 0) {
             printf("Hello World");
