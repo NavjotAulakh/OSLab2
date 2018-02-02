@@ -55,6 +55,7 @@ int main(int argc, char *argv[])
 		}
 		++num_tokens;
 	}
+<<<<<<< HEAD
 	
 	printf("Command token: %s\n", command);
 	printf("Argument1 tokens: %s\n", arguments[1]);
@@ -65,41 +66,51 @@ int main(int argc, char *argv[])
         if (strcmp(command, "cd") == 0)
         {
             printf("Hello World CD\n");
+=======
+	printf("Command token (command): %s\n", command);
+	printf("Command token (argument): %s\n", arg);
+	
+        // Check the command and execute the operations for each command
+        // cd command -- change the current directory
+        if (strcmp(command, "cd") == 0) {
+            printf("Hello World");
+>>>>>>> d22112d9e8a6ea306f84db1385b68cab335ccac8
         }
-	else if (strcmp(command, "clr") == 0)
-        {
+		else if (strcmp(command, "clr") == 0) {
             printf("Hello World");
         }
-	else if (strcmp(command, "dir") == 0)
-        {
+		else if (strcmp(command, "dir") == 0) {
             printf("Hello World");
         }
-	else if (strcmp(command, "environ") == 0)
-        {
+		else if (strcmp(command, "environ") == 0) {
             printf("Hello World");
         }
-	else if (strcmp(command, "echo") == 0)
-        {
+		else if (strcmp(command, "echo") == 0) {
             printf("Hello World");
         }
-	else if (strcmp(command, "help") == 0)
-        {
-            printf("Hello World");
+		
+		//prints the README.md manual
+		else if (strcmp(command, "help") == 0) {
+	    	int c;
+			FILE *file;
+			file = fopen("README.md", "r");
+			if (file) {
+    			while ((c = getc(file)) != EOF)
+        			putchar(c);
+    			fclose(file);
+			}
         }
-	else if (strcmp(command, "pause") == 0)
-        {
+		else if (strcmp(command, "pause") == 0) {
             printf("Hello World");
         }
 
         // quit command -- exit the shell
-        else if (strcmp(command, "quit") == 0)
-        {
+        else if (strcmp(command, "quit") == 0) {
             return EXIT_SUCCESS;
         }
 
         // Unsupported command
-        else
-        {
+        else {
             fputs("Unsupported command, use help to display the manual\n", stderr);
         }
     }
