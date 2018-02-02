@@ -14,7 +14,7 @@ MyShell Project that simulates a CMD in Windows or BASHSHELL in Linux but with l
 
 cd *directory* :  change current directory to the next *directory*, if the next *directory* name doesn't exist, error " No such directory or file' is printed.
 
-clr - Clear the screen.
+clr - Clear the screen terminal.
 
 dir <directory> - List the contents of directory <directory>.
 
