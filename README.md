@@ -1,5 +1,7 @@
 # OSLab2
 MyShell Project that simulates a CMD in Windows or BASHSHELL in Linux but with limited functionality
+Contributors: Name: Jeffrey Zhang ID: 100585611 || Name: Jehro Celemin ID: 100582918 ||Name: Nicolas Zarfino ID: 100599899 || Name: Navjot Aulakh ID: 100488741 ||
+
 
  Instructions to get accesss to the internal commands for the Project Shell
 --------------------------------------------------------
