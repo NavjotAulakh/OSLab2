@@ -11,6 +11,7 @@ MyShell Project that simulates a CMD in Windows or BASHSHELL in Linux but with l
 
 
 --------------------COMMANDS-----------------------------
+help - Display the user manual using the more filter.
 
 cd *directory* :  change current directory to the next *directory*, if the next *directory* name doesn't exist, error " No such directory or file' is printed.
 
@@ -22,11 +23,12 @@ environ - List all the environment strings.
 
 echo <comment> - Display <comment> on the display followed by a new line (multiple spaces/tabs may be reduced to a single space).
 
-help - Display the user manual using the more filter.
 
 pause - Pause operation of the shell until 'Enter' is pressed.
 
 quit - Quit the shell.
 
 The shell environment should contain shell=<pathname>/myshell where <pathname>/myshell is the full path for the shell executable (not a hardwired path back to your directory, but the one from which it was executed).
+
+
 
