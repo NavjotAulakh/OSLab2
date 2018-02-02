@@ -55,49 +55,49 @@ int main(int argc, char *argv[])
 		}
 		++num_tokens;
 	}
-	printf("Command token: %s\n", command);
-	printf("Command token: %s\n", arg);
+	printf("Command token (command): %s\n", command);
+	printf("Command token (argument): %s\n", arg);
 	
         // Check the command and execute the operations for each command
         // cd command -- change the current directory
-        if (strcmp(command, "cd") == 0)
-        {
+        if (strcmp(command, "cd") == 0) {
             printf("Hello World");
         }
-	else if (strcmp(command, "clr") == 0)
-        {
+		else if (strcmp(command, "clr") == 0) {
             printf("Hello World");
         }
-	else if (strcmp(command, "dir") == 0)
-        {
+		else if (strcmp(command, "dir") == 0) {
             printf("Hello World");
         }
-	else if (strcmp(command, "environ") == 0)
-        {
+		else if (strcmp(command, "environ") == 0) {
             printf("Hello World");
         }
-	else if (strcmp(command, "echo") == 0)
-        {
+		else if (strcmp(command, "echo") == 0) {
             printf("Hello World");
         }
-	else if (strcmp(command, "help") == 0)
-        {
-            printf("cd *directory* :  change current directory to the next *directory*, if the next *directory* name doesn't exist, error \" No such directory or file' is printed.\nclr - Clear the screen terminal.\ndir <directory> -  List the content of the directory selected or dir iwht no selected directory  list the content of the current directory too (as the ls command)\nenviron - List all the environment strings.\necho <comment> - Display <comment> on the display followed by a new line (multiple spaces/tabs may be reduced to a single space).\nhelp - Display the user manual using the more\n filter.\npause - Pause operation of the shell until 'Enter' is pressed.\nquit - Quit the shell.");
+		
+		//prints the README.md manual
+		else if (strcmp(command, "help") == 0) {
+	    	int c;
+			FILE *file;
+			file = fopen("README.md", "r");
+			if (file) {
+    			while ((c = getc(file)) != EOF)
+        			putchar(c);
+    			fclose(file);
+			}
         }
-	else if (strcmp(command, "pause") == 0)
-        {
+		else if (strcmp(command, "pause") == 0) {
             printf("Hello World");
         }
 
         // quit command -- exit the shell
-        else if (strcmp(command, "quit") == 0)
-        {
+        else if (strcmp(command, "quit") == 0) {
             return EXIT_SUCCESS;
         }
 
         // Unsupported command
-        else
-        {
+        else {
             fputs("Unsupported command, use help to display the manual\n", stderr);
         }
     }
