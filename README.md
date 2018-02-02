@@ -30,6 +30,3 @@ pause: Pause operation of the shell until 'Enter' is pressed.
 quit: Quit the shell.
 
 The shell environment should contain shell=<pathname>/myshell where <pathname>/myshell is the full path for the shell executable (not a hardwired path back to your directory, but the one from which it was executed).
-
-
-
