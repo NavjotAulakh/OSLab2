@@ -29,10 +29,8 @@ int main(int argc, char *argv[])
     char arg[BUFFER_LEN] = { 0 };
 
     // Parse the commands provided using argc and argv
-    int i;
-
-    for( i = 0; i < argc; ++i ) {
-		printf("Argument %d = \"%s\"\n", i, argv[i]);
+    for(int i = 0; i < argc; ++i ) {
+		//printf("Argument %d = \"%s\"\n", i, argv[i]);
 		strcpy(command, argv[i]);
     }
 
@@ -44,12 +42,12 @@ int main(int argc, char *argv[])
 		int num_tokens = 0;
 		char *token = NULL;
 
-		printf("Tokenize Line: \"%s\"", buffer);
+		printf("Tokenize Line: %s", buffer);
 
-		for( token = strtok(buffer, " ");NULL != token;token = strtok(NULL, " ")) {
-			printf("\t%d) \"%s\"\n", num_tokens, token);
+		for(token = strtok(buffer, " ");NULL != token;token = strtok(NULL, " ")) {
+			printf("%d) %s\n", num_tokens, token);
 			if (num_tokens == 0) {
-				strcpy(command,token);
+				strcpy(command, token);
 			} 
 			else {
 				strcpy(arguments[num_tokens],token);
@@ -58,13 +56,13 @@ int main(int argc, char *argv[])
 		}
 	
 		printf("Command token: %s\n", command);
-		printf("Argument1 tokens: %s\n", arguments[1]);
-		printf("Argument2 tokens: %s\n", arguments[2]);
+		printf("Argument tokens: %s\n", arguments[1]);
+		//printf("Argument2 tokens: %s\n", arguments[2]);
 
 		// Check the command and execute the operations for each command
 		// cd command -- change the current directory
 		if (strcmp(command, "cd") == 0) {
-		    printf("Hello World CD\n");
+		    printf("Hello World cd\n");
 		}
 		else if (strcmp(command, "clr") == 0) {
 		    printf("Hello World");
