@@ -62,11 +62,33 @@ int main(int argc, char *argv[])
         // cd command -- change the current directory
         if (strcmp(command, "cd") == 0)
         {
-            // your code here
+            printf("Hello World");
+        }
+	else if (strcmp(command, "clr") == 0)
+        {
+            printf("Hello World");
+        }
+	else if (strcmp(command, "dir") == 0)
+        {
+            printf("Hello World");
+        }
+	else if (strcmp(command, "environ") == 0)
+        {
+            printf("Hello World");
+        }
+	else if (strcmp(command, "echo") == 0)
+        {
+            printf("Hello World");
+        }
+	else if (strcmp(command, "help") == 0)
+        {
+            printf("Hello World");
+        }
+	else if (strcmp(command, "pause") == 0)
+        {
+            printf("Hello World");
         }
 
-        // other commands here...
-        
         // quit command -- exit the shell
         else if (strcmp(command, "quit") == 0)
         {
