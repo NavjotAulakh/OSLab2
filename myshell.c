@@ -18,7 +18,7 @@
 #define BUFFER_LEN 256
 
 // Put global environment variables here
-
+char arguments[5][256];
 // Define functions declared in myshell.h here
 
 int main(int argc, char *argv[])
@@ -51,18 +51,20 @@ int main(int argc, char *argv[])
 		printf("\t%d) \"%s\"\n", num_tokens, token);
 		if (num_tokens == 0) {strcpy(command,token);} 
 		else {
-			strcpy(arg,token);
+			strcpy(arguments[num_tokens],token);
 		}
 		++num_tokens;
 	}
+	
 	printf("Command token: %s\n", command);
-	printf("Command token: %s\n", arg);
+	printf("Argument1 tokens: %s\n", arguments[1]);
+	printf("Argument2 tokens: %s\n", arguments[2]);
 	
         // Check the command and execute the operations for each command
         // cd command -- change the current directory
         if (strcmp(command, "cd") == 0)
         {
-            printf("Hello World");
+            printf("Hello World CD\n");
         }
 	else if (strcmp(command, "clr") == 0)
         {
