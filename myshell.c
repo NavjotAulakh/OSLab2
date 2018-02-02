@@ -45,15 +45,19 @@ int main(int argc, char *argv[])
 	int num_tokens = 0;
 	char *token = NULL;
 
-	    printf("Tokenize Line: \"%s\"", buffer);
-	    for( token  = strtok(buffer, " ");
-		 NULL    != token;
-		 token  = strtok(NULL, " ") ) {
+	printf("Tokenize Line: \"%s\"", buffer);
+	for( token = strtok(buffer, " ");NULL != token;token = strtok(NULL, " "))
+	{
 		printf("\t%d) \"%s\"\n", num_tokens, token);
+		if (num_tokens == 0) {strcpy(command,token);} 
+		else {
+			strcpy(arg,token);
+		}
 		++num_tokens;
-	    }
-	    printf("Number of tokens: %d\n", num_tokens);
-
+	}
+	printf("Command token: %s\n", command);
+	printf("Command token: %s\n", arg);
+	
         // Check the command and execute the operations for each command
         // cd command -- change the current directory
         if (strcmp(command, "cd") == 0)
