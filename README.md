@@ -10,5 +10,5 @@ MyShell Project that simulates a CMD in Windows or BASHSHELL in Linux but with l
 3 type help to check all the internal commands that are in myshell <br />
 
 --------------------COMMANDS-----------------------------
-cd :  change
-quit : change?
+cd :  change  <br />
+quit : change?  <br />
