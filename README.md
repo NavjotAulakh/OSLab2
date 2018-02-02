@@ -11,3 +11,4 @@ MyShell Project that simulates a CMD in Windows or BASHSHELL in Linux but with l
 
 --------------------COMMANDS-----------------------------
 cd :  change
+quit : change?
