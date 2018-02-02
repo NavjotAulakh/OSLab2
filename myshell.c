@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     // Perform an infinite loop getting command input from users
     while (fgets(buffer, BUFFER_LEN, stdin) != NULL)
     {
-	
+        
         // Perform string tokenization to get the command and argument
 	char *token = NULL;
 	
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
         // cd command -- change the current directory
         if (strcmp(command, "cd") == 0)
         {
-            // your code here
+            system (command, token);
         }
 
         // other commands here...
