@@ -35,24 +35,16 @@ int main(int argc, char *argv[])
 	printf("Argument %d = \"%s\"\n", i, argv[i]);
 	strcpy(command, argv[i]);
     }
-    int num_tokens = argc;
+
     // Perform an infinite loop getting command input from users
     while (fgets(buffer, BUFFER_LEN, stdin) != NULL)
     {
-	
+	int num_tokens = argc;
         // Perform string tokenization to get the command and argument
-	char *token = NULL;
-	
-	printf("Tokenize Line: \"%s\"\n", arg);
-	for( *token = strtok(*argv, " ");
-		NULL    != *token;
-		*token  = strtok(NULL, " ") ) {
-		//printf("\t%d) \"%s\"\n", num_tokens, str_ptr);
-		++num_tokens;
-	    }
-	    printf("Number of tokens: %d\n", num_tokens);
+	strcpy(arg,argv[i])
+	printf("Tokenize Line: \"%s\"\n", str_ptr);
 
-	    return 0;
+	return 0;
         // Check the command and execute the operations for each command
         // cd command -- change the current directory
         if (strcmp(command, "cd") == 0)
