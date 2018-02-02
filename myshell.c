@@ -46,65 +46,63 @@ int main(int argc, char *argv[])
 
 		printf("Tokenize Line: \"%s\"", buffer);
 
-	for( token = strtok(buffer, " ");NULL != token;token = strtok(NULL, " ")) {
-		printf("\t%d) \"%s\"\n", num_tokens, token);
-		if (num_tokens == 0) {
-			strcpy(command,token);
-		} 
-		else {
-			strcpy(arguments[num_tokens],token);
+		for( token = strtok(buffer, " ");NULL != token;token = strtok(NULL, " ")) {
+			printf("\t%d) \"%s\"\n", num_tokens, token);
+			if (num_tokens == 0) {
+				strcpy(command,token);
+			} 
+			else {
+				strcpy(arguments[num_tokens],token);
+			}
+			++num_tokens;
 		}
-		++num_tokens;
-	}
 	
 		printf("Command token: %s\n", command);
 		printf("Argument1 tokens: %s\n", arguments[1]);
 		printf("Argument2 tokens: %s\n", arguments[2]);
 
-        // Check the command and execute the operations for each command
-        // cd command -- change the current directory
-        if (strcmp(command, "cd") == 0) {
-            printf("Hello World CD\n");
-			printf("Command token (command): %s\n", command);
-			printf("Command token (argument): %s\n", arg);
-        }
+		// Check the command and execute the operations for each command
+		// cd command -- change the current directory
+		if (strcmp(command, "cd") == 0) {
+		    printf("Hello World CD\n");
+		}
 		else if (strcmp(command, "clr") == 0) {
-            printf("Hello World");
-        }
+		    printf("Hello World");
+		}
 		else if (strcmp(command, "dir") == 0) {
-            printf("Hello World");
-        }
+		    printf("Hello World");
+		}
 		else if (strcmp(command, "environ") == 0) {
-            printf("Hello World");
-        }
+		    printf("Hello World");
+		}
 		else if (strcmp(command, "echo") == 0) {
-            printf("Hello World");
-        }
-		
+		    printf("Hello World");
+		}
+	
 		//prints the README.md manual
 		else if (strcmp(command, "help") == 0) {
-	    	int c;
+			int c;
 			FILE *file;
 			file = fopen("README.md", "r");
 			if (file) {
-    			while ((c = getc(file)) != EOF)
-        			putchar(c);
-    			fclose(file);
+				while ((c = getc(file)) != EOF)
+					putchar(c);
+				fclose(file);
 			}
-        }
+		}
 		else if (strcmp(command, "pause") == 0) {
-            printf("Hello World");
-        }
+		    printf("Hello World");
+		}
 
-        // quit command -- exit the shell
-        else if (strcmp(command, "quit") == 0) {
-            return EXIT_SUCCESS;
-        }
+		// quit command -- exit the shell
+		else if (strcmp(command, "quit") == 0) {
+		    return EXIT_SUCCESS;
+		}
 
-        // Unsupported command
-        else {
-            fputs("Unsupported command, use help to display the manual\n", stderr);
-        }
+		// Unsupported command
+		else {
+		    fputs("Unsupported command, use help to display the manual\n", stderr);
+		}
     }
     return EXIT_SUCCESS;
 }
