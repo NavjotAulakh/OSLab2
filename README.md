@@ -16,7 +16,7 @@ cd *directory* :  change current directory to the next *directory*, if the next 
 
 clr - Clear the screen terminal.
 
-dir <directory> - List the contents of directory <directory>.
+dir <directory> -  List the content of the directory selected or dir iwht no selected directory  list the content of the current directory too (as the ls command)
 
 environ - List all the environment strings.
 
