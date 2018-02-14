@@ -85,7 +85,12 @@ for( token = strtok(buffer, " \n\0\r");NULL != token; token = strtok(NULL, " \n\
         printf("MyShells\n");
     }
     else if (strcmp(command, "echo") == 0) {
-        printf("MyShells\n");
+        int i = 1;
+        while (i < num_tokens) {
+            printf("%s ", arguments[i]);
+            ++i;
+        }
+        printf("\n");   
     }
     
     //prints the README.md manual
