@@ -40,16 +40,17 @@ strcpy(command, argv[i]);
 // Perform an infinite loop getting command input from users
 while (fgets(buffer, BUFFER_LEN, stdin) != NULL)
 {
-    // Perform string tokenization to get the command and argument
+// Perform string tokenization to get the command and argument
 strcpy(arg,buffer);
-fputs(arg,stdout);
 int num_tokens = 0;
 char *token = NULL;
 
-for( token = strtok(buffer, " \n\0\r");NULL != token;token = strtok(NULL, " \n\0\r"))
+for( token = strtok(buffer, " \n\0\r");NULL != token; token = strtok(NULL, " \n\0\r"))
 {
-    if (num_tokens == 0) {strcpy(command,token); printf ("Command:%s\n", command);} 
-    else {
+    if (num_tokens == 0) 
+    {strcpy(command,token); printf ("Command:%s\n", command);} 
+    else 
+    {
         strcpy(arguments[num_tokens],token);
         printf ("Argument:%s\n", arguments[num_tokens]);
     }
@@ -60,7 +61,7 @@ for( token = strtok(buffer, " \n\0\r");NULL != token;token = strtok(NULL, " \n\0
         printf("Cd command.\n");
     }
     else if (strcmp(command, "clr") == 0) {
-        printf("MyShells\n");
+        system("clear");
     }
     else if (strcmp(command, "dir") == 0) {
         if (!(arguments[1])){
@@ -99,7 +100,11 @@ for( token = strtok(buffer, " \n\0\r");NULL != token;token = strtok(NULL, " \n\0
         }
     }
     else if (strcmp(command, "pause") == 0) {
-        printf("MyShells\n");
+        printf("Press enter to continue...");
+        char c = 'm';
+        while (c != '\r' && c != '\n') { c = getchar(); }
+        printf ("Unpaused.\n");
+
     }
 
     // quit command -- exit the shell
