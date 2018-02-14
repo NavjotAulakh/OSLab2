@@ -32,7 +32,7 @@ char arg[BUFFER_LEN] = { 0 };
 // Parse the commands provided using argc and argv
 int i;
 
-for( i = 0; i < argc; ++i ) {
+for(i = 0; i < argc; ++i ) {
 printf("\nMy Shell command line. \n");
 strcpy(command, argv[i]);
 }
