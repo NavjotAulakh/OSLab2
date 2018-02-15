@@ -1,7 +1,7 @@
 CC = clang
 CFLAGS = -Wall -Wextra -std=c99 -g
 LFLAGS = 
-LIBS = -lm
+LIBS = -lm -D_GNU_SOURCE
 SOURCES = myshell.c utility.c
 OBJECTS = $(subst .c,.o,$(SOURCES))
 BIN = myshell

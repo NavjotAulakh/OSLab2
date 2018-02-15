@@ -5,6 +5,7 @@
 * All rights reserved.
 * 
 */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -31,7 +32,10 @@ char arg[BUFFER_LEN] = { 0 };
 
 // Parse the commands provided using argc and argv
 int i;
+char * Myshell = getenv("PWD"); strcat(Myshell,"/myshell");
+    setenv("SHELL", Myshell , 1); // Overwrite it
 
+    system("echo $SHELL"); // Outputs "Myshell PWD/myshell"
 for(i = 0; i < argc; ++i ) {
 printf("\nMy Shell command line. \n");
 strcpy(command, argv[i]);
@@ -62,6 +66,14 @@ for( token = strtok(buffer, " \n\0\r");NULL != token; token = strtok(NULL, " \n\
     }
     else if (strcmp(command, "clr") == 0) {
         system("clear");
+    }
+    else if (strcmp(command, "directory") == 0) {
+        if (num_tokens == 1){
+            printf("%s\n",getenv("PWD"));
+        }
+        else {
+               // printf(getenv("PWD"));
+        }
     }
     else if (strcmp(command, "dir") == 0) {
         if (!(arguments[1])){
