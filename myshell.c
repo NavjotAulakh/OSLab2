@@ -82,9 +82,10 @@ for( token = strtok(buffer, " \n\0\r");NULL != token; token = strtok(NULL, " \n\
             pDirect = opendir(arguments[1]);
             if (pDirect == NULL) {
                 printf ("Cannot open directory '%s'. Sorry.\n", arguments[1]);
-            }
-            while ((pDirStrut = readdir(pDirect)) != NULL) {
-                printf ("[%s]\n", pDirStrut->d_name);
+            } else {
+                while ((pDirStrut = readdir(pDirect)) != NULL) {
+                    printf ("[%s]\n", pDirStrut->d_name);
+                }
             }
             closedir (pDirect);
         }
