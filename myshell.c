@@ -32,10 +32,13 @@ char arg[BUFFER_LEN] = { 0 };
 
 // Parse the commands provided using argc and argv
 int i;
-char * Myshell = getenv("PWD"); strcat(Myshell,"/myshell");
+system("echo $SHELL"); // Outputs "Myshell PWD/myshell"
+char * Myshell = getenv("PWD"); 
+    setenv("PWD", Myshell, 1);
+    strcat(Myshell,"/myshell");
     setenv("SHELL", Myshell , 1); // Overwrite it
-
     system("echo $SHELL"); // Outputs "Myshell PWD/myshell"
+    printf("echo %s",getenv("PWD")); // Outputs "Myshell PWD/myshell"
 for(i = 0; i < argc; ++i ) {
 printf("\nMy Shell command line. \n");
 strcpy(command, argv[i]);
@@ -62,19 +65,19 @@ for( token = strtok(buffer, " \n\0\r");NULL != token; token = strtok(NULL, " \n\
 }
 
     if (strcmp(command, "cd") == 0) {
-        printf("Cd command.\n");
-    }
-    else if (strcmp(command, "clr") == 0) {
-        system("clear");
-    }
-    else if (strcmp(command, "directory") == 0) {
+        char* path = arguments[num_tokens];
         if (num_tokens == 1){
             printf("%s\n",getenv("PWD"));
         }
         else {
-               // printf(getenv("PWD"));
+            printf("Changing Current directory:%s to %s",getenv("PWD"),path);
+            //chdir(*path);
         }
     }
+    else if (strcmp(command, "clr") == 0) {
+        system("clear");
+    }
+
     else if (strcmp(command, "dir") == 0) {
         if (!(arguments[1])){
             printf("Invalid argument. See Help page.\n");

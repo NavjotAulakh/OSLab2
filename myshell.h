@@ -12,5 +12,5 @@
 // extern keyword such as in the following example:
 // extern void display_help(void);
 extern int setenv(const char *envname, const char *envval, int overwrite);
-
+extern int chdir (const char * path);
 #endif /* MYSHELL_H_ */
