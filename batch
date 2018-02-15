@@ -1,0 +1,6 @@
+echo something
+pause
+dir /
+cd /
+echo else
+

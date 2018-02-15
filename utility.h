@@ -13,11 +13,12 @@
 // extern void display_help(void);
 
 #endif /* UTILITY_H_ */
-
-extern void changeDirectory(char arguments[5][256], int num_tokens);
-// extern void clearScreen();
-// extern void seeDirectory();
-// extern void checkEnvironVar();
-// extern int pause();
-// extern void printHelp();
+extern int commandHandler(char command[256], char arguments[10][256], int num_tokens);
+extern void changeDirectory(char arguments[10][256], int num_tokens);
+extern void seeDirectory(char arguments[10][256], int num_tokens);
+extern void exec(char arguments[10][256], int num_tokens);
+extern void checkEnvironVar();
+extern void pauseShell();
+extern void shellPrint(char arguments[10][256], int num_tokens);
+extern void printHelp();
 

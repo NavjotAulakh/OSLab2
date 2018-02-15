@@ -24,6 +24,7 @@ environ: List all the environment strings.
 
 echo <comment>: Display <comment> on the display followed by a new line (multiple spaces/tabs may be reduced to a single space).
 
+exec: Executes the command in a batch file, line by line. Usage: execbatch [batchfile]. Batch file must be in the current working directory. 
 
 pause: Pause operation of the shell until 'Enter' is pressed.
 
