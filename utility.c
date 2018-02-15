@@ -34,6 +34,32 @@ extern void changeDirectory(char arguments[5][256], int num_tokens ){
     
         
 }
+
+extern void readFile(char arguments[5][256], int num_tokens){
+       if (num_tokens != 2){
+        printf("Usage: myshell [batchfile] ");
+       }
+        else {
+        FILE* fp;
+        char line[256], args[256], command[256];   
+        fp = fopen(arguments[1], "r");
+        getline(line, 256, fp);   
+        while (line != EOF){
+            for( token = strtok(line, " \n\0\r");NULL != token; token = strtok(NULL, " \n\0\r"))
+            {
+                 if (num_tokens == 0) 
+                     {strcpy(command,token); printf ("Command:%s\n", command);} 
+                else 
+                {
+                strcpy(args[num_tokens],token);
+                //printf ("Argument:%s\n", args[num_tokens]);
+                }
+            ++num_tokens;
+            }
+            commandHandler(command, args);
+        }
+    }
+}
 //extern void clearScreen();
 //extern void seeDirectory();
 //extern void checkEnvironVar();
