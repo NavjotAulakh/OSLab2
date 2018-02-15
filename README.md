@@ -1,5 +1,6 @@
 # OSLab2
-MyShell Project that simulates a CMD in Windows or BASHSHELL in Linux but with limited functionality
+MyShell Project that simulates a CMD in Windows or BASHSHELL in Linux but with limited functionality <br />
+
 
  Instructions to get accesss to the internal commands for the Project Shell
 --------------------------------------------------------
