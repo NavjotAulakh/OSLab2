@@ -82,7 +82,12 @@ for( token = strtok(buffer, " \n\0\r");NULL != token; token = strtok(NULL, " \n\
     }
         
     else if (strcmp(command, "environ") == 0) {
-        printf("MyShells\n");
+        extern char **environ;
+
+        int i = 0;
+        while(environ[i]) {
+        printf("%s\n", environ[i++]); // prints in form of "variable=value"
+        }
     }
     else if (strcmp(command, "echo") == 0) {
         int i = 1;
