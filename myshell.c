@@ -65,14 +65,14 @@ for( token = strtok(buffer, " \n\0\r");NULL != token; token = strtok(NULL, " \n\
 }
 
     if (strcmp(command, "cd") == 0) {
-        char* path = NULL;
-        printf("%s \n",arguments[0]);
-        //strcpy(path,arguments[0]);
+        char *path = NULL;
+        printf("%s \n",arguments[num_tokens]);
+        path = arguments[num_tokens];
         if (num_tokens == 1){
             printf("%s\n",getenv("PWD"));
         }
         else {
-            printf("Changing Current directory:%s to %s",getenv("PWD"),path);
+            printf("Changing Current directory:%s to %s\n",getenv("PWD"),*path);
             //chdir(*path);
         }
     }
