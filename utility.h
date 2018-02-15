@@ -13,3 +13,11 @@
 // extern void display_help(void);
 
 #endif /* UTILITY_H_ */
+
+extern void changeDirectory(char arguments[5][256], int num_tokens);
+// extern void clearScreen();
+// extern void seeDirectory();
+// extern void checkEnvironVar();
+// extern int pause();
+// extern void printHelp();
+

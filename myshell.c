@@ -45,7 +45,7 @@ strcpy(command, argv[i]);
 }
 
 // Perform an infinite loop getting command input from users
-while (fgets(buffer, BUFFER_LEN, stdin) != NULL)
+while (printf("%s: ",getenv("PWD")),fgets(buffer, BUFFER_LEN, stdin) != NULL)
 {
 // Perform string tokenization to get the command and argument
 strcpy(arg,buffer);
@@ -66,6 +66,7 @@ for( token = strtok(buffer, " \n\0\r");NULL != token; token = strtok(NULL, " \n\
 
     if (strcmp(command, "cd") == 0) {
         changeDirectory(arguments, num_tokens);
+
     }
     else if (strcmp(command, "clr") == 0) {
         system("clear");
