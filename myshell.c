@@ -73,8 +73,8 @@ for( token = strtok(buffer, " \n\0\r");NULL != token; token = strtok(NULL, " \n\
     }
 
     else if (strcmp(command, "dir") == 0) {
-        if (!(arguments[1])){
-            printf("Invalid argument. See Help page.\n");
+        if (num_tokens != 2){
+            printf("%s\n", getenv("PWD") );
         }
         else {
             struct dirent *pDirStrut;
