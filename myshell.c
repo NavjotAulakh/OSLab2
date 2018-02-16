@@ -54,22 +54,6 @@ int main(int argc, char *argv[])
         int num_tokens = 0;
         char *token = NULL;
 
-<<<<<<< HEAD
-    else if (strcmp(command, "dir") == 0) {
-        if (num_tokens != 2){
-            printf("%s\n", getenv("PWD") );
-        }
-        else {
-            struct dirent *pDirStrut;
-            DIR *pDirect;
-            pDirect = opendir(arguments[1]);
-            if (pDirect == NULL) {
-                printf ("Cannot open directory '%s'. Sorry.\n", arguments[1]);
-            } else {
-                while ((pDirStrut = readdir(pDirect)) != NULL) {
-                    printf ("[%s]\n", pDirStrut->d_name);
-                }
-=======
         for (token = strtok(buffer, " \n\0\r"); NULL != token; token = strtok(NULL, " \n\0\r"))
         {
             if (num_tokens == 0)
@@ -81,7 +65,6 @@ int main(int argc, char *argv[])
             {
                 strcpy(arguments[num_tokens], token);
                 printf("Argument:%s\n", arguments[num_tokens]);
->>>>>>> 05e408ce6b4b733ec22628a767a1c46ddc63fd64
             }
             ++num_tokens;
         }
