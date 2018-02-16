@@ -77,6 +77,18 @@ extern void exec(char arguments[10][256], int num_tokens)
 
 extern int commandHandler(char command[256], char arguments[10][256], int num_tokens)
 {
+    for (int i = 0; i< num_tokens; i++ )
+    {
+        if (strcmp(arguments[i], "<") == 0){
+            freopen(arguments[i+1], "r", stdin);
+        }
+        if (strcmp(arguments[i], ">") == 0){
+            freopen(arguments[i+1], "w", stdout);
+        }
+        if (strcmp(arguments[i], ">>") == 0){
+            freopen(arguments[i+1], "a", stdout);
+        }
+    }
     // Change the working directory.
     if (strcmp(command, "cd") == 0)
     {
