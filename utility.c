@@ -42,7 +42,7 @@ extern void exec(char arguments[10][256], int num_tokens)
 {
     if (num_tokens != 2)
     {
-        printf("Usage: myshell [batchfile] ");
+        printf("Usage: myshell [batchfile] \n");
     }
     else
     {
