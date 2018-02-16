@@ -23,7 +23,7 @@ extern void changeDirectory(char arguments[10][256], int num_tokens)
     {
         printf("%s\n", getenv("PWD"));
     }
-    if (num_tokens > 2)
+    else if(num_tokens > 2)
     {
         printf("Invalid input. See help file.\n");
     }
@@ -31,9 +31,10 @@ extern void changeDirectory(char arguments[10][256], int num_tokens)
     {
         printf("Changing Current directory:%s to %s\n", getenv("PWD"), path);
         int r = chdir(path);
+        setenv("PWD", path, 2);
         if (r != 0)
         {
-            printf("Failed to change directory.");
+            printf("Failed to change directory. \n");
         }
     }
 }
@@ -82,13 +83,14 @@ extern int commandHandler(char command[256], char arguments[10][256], int num_to
         if (strcmp(arguments[i], "<") == 0){
             freopen(arguments[i+1], "r", stdin);
         }
-        if (strcmp(arguments[i], ">") == 0){
+        if (strcmp(arguments[i], ">"f) == 0){
             freopen(arguments[i+1], "w", stdout);
         }
         if (strcmp(arguments[i], ">>") == 0){
             freopen(arguments[i+1], "a", stdout);
         }
     }
+    
     // Change the working directory.
     if (strcmp(command, "cd") == 0)
     {
@@ -166,7 +168,18 @@ extern void seeDirectory(char arguments[10][256], int num_tokens)
 {
     if (num_tokens != 2)
     {
-        printf("%s\n", getenv("PWD"));
+        struct dirent *pDirStrut;
+        DIR *pDirect;
+        pDirect = opendir(getenv("PWD"));
+        if (pDirect == NULL)
+        {
+            printf("Cannot open directory '%s'. Sorry.\n", arguments[1]);
+        }
+        while ((pDirStrut = readdir(pDirect)) != NULL)
+        {
+            printf("[%s]\n", pDirStrut->d_name);
+        }
+        closedir(pDirect);
     }
     else
     {

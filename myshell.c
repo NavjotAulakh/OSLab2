@@ -33,13 +33,10 @@ int main(int argc, char *argv[])
 
     // Parse the commands provided using argc and argv
     int i;
-    system("echo $SHELL"); // Outputs "Myshell PWD/myshell"
     char *Myshell = getenv("PWD");
-    setenv("PWD", Myshell, 1);
+    setenv("PWD", Myshell, 2);
     strcat(Myshell, "/myshell");
     setenv("SHELL", Myshell, 1);      // Overwrite it
-    system("echo $SHELL");            // Outputs "Myshell PWD/myshell"
-    printf("echo %s", getenv("PWD")); // Outputs "Myshell PWD/myshell"
     for (i = 0; i < argc; ++i)
     {
         printf("\nMy Shell command line. \n");
